@@ -617,7 +617,7 @@ namespace SerializeReferenceDropdown.Editor.SearchTool
             {
                 foreach (var component in components)
                 {
-                    if (AssetDatabase.TryGetGUIDAndLocalFileIdentifier(component, out var guid, out var localId))
+                    if (AssetDatabase.TryGetGUIDAndLocalFileIdentifier(component, out var guid, out long localId))
                     {
                         if (prefabComponentData.FileId == localId)
                         {
@@ -850,7 +850,7 @@ namespace SerializeReferenceDropdown.Editor.SearchTool
                 var components = prefab.GetComponentsInChildren<MonoBehaviour>(true);
                 foreach (var component in components)
                 {
-                    if (AssetDatabase.TryGetGUIDAndLocalFileIdentifier(component, out var guid, out var localId))
+                    if (AssetDatabase.TryGetGUIDAndLocalFileIdentifier(component, out var guid, out long localId))
                     {
                         var componentData = new SearchToolData.PrefabComponentData()
                         {
